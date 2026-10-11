@@ -63,6 +63,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
   font-size: 16px;
   background-color: var(--bg-dark-0);
   color: var(--text-primary);
@@ -76,6 +77,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 84px;
 }
 
 img {
@@ -155,14 +157,17 @@ button {
    Header & Navigation
    ========================================================================== */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
-  background: rgba(10, 10, 13, 0.88);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2000;
+  background: rgba(10, 10, 13, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--gold-border);
-  transition: background var(--transition-normal), border var(--transition-normal);
+  transition: background var(--transition-normal), border var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .site-header.scrolled {
@@ -229,7 +234,7 @@ button {
 .main-nav .nav-links {
   display: flex;
   list-style: none;
-  gap: 32px;
+  gap: 22px;
 }
 
 .nav-link {
@@ -269,7 +274,7 @@ button {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 18px;
 }
 
 .tiktok-badge-btn {
@@ -1797,7 +1802,7 @@ button {
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
-  z-index: 1998;
+  z-index: 2100;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-normal);
@@ -1817,7 +1822,7 @@ button {
   max-width: 440px;
   background: #0E0E13;
   border-left: 1px solid var(--gold-border);
-  z-index: 1999;
+  z-index: 2200;
   transform: translateX(100%);
   transition: transform var(--transition-normal);
   display: flex;
@@ -2741,6 +2746,16 @@ button {
     cursor: pointer;
     flex-shrink: 0;
   }
+
+  .nav-search-dropdown {
+    position: fixed;
+    top: 84px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-height: 60vh;
+    z-index: 3001;
+  }
 }
 
 @keyframes menuSlideDown {
@@ -2761,6 +2776,14 @@ button {
     width: 100%;
   }
 
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  body {
+    padding-top: 72px;
+  }
+
   .container {
     padding: 0 16px;
   }
@@ -2777,6 +2800,10 @@ button {
   .nav-search-container.open .nav-search-bar {
     height: 72px;
     padding: 0 14px;
+  }
+
+  .nav-search-dropdown {
+    top: 72px;
   }
 
   .brand-logo {
@@ -3379,36 +3406,75 @@ button {
 }
 
 @media (min-width: 991px) {
+  .nav-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
   .nav-search-bar {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%) scale(0.96);
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    display: flex;
+    display: none;
     align-items: center;
     background: #111116;
     border: 1px solid var(--gold-primary);
     border-radius: 999px;
     padding: 6px 14px;
-    width: 330px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(212, 175, 55, 0.25);
-    transition: all var(--transition-fast);
-    z-index: 100;
+    width: 250px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 14px rgba(212, 175, 55, 0.22);
+    z-index: 10;
   }
 
   .nav-search-container.open .nav-search-bar {
+    display: flex;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(-50%) scale(1);
+    animation: searchInlineExpand 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .nav-search-container.open .search-trigger-btn {
+    display: none;
+  }
+
+  .nav-search-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 320px;
+    max-width: 90vw;
+  }
+}
+
+@keyframes searchInlineExpand {
+  from {
     opacity: 0;
-    pointer-events: none;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 991px) {
+  .main-nav .nav-links {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-search-bar {
+    width: 215px !important;
   }
 }
 
