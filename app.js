@@ -241,28 +241,112 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchTrigger = document.getElementById('search-trigger');
   const navbarSearchInput = document.getElementById('navbar-search-input');
   const clearSearchBtn = document.getElementById('clear-search-btn');
+  const navSearchDropdown = document.getElementById('nav-search-dropdown');
   const filterPills = document.querySelectorAll('.filter-pill');
   const resultsCounter = document.getElementById('catalog-results-count');
 
-  function filterCatalog() {
-    const query = navbarSearchInput ? navbarSearchInput.value.toLowerCase().trim() : '';
+  function normalizeSearchText(str) {
+    return (str || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim();
+  }
+
+  function renderSearchDropdown(matchedProducts, query) {
+    if (!navSearchDropdown) return;
+
+    if (!query) {
+      navSearchDropdown.classList.remove('active');
+      navSearchDropdown.innerHTML = '';
+      return;
+    }
+
+    if (matchedProducts.length === 0) {
+      navSearchDropdown.innerHTML = `
+        <div class="search-drop-empty">
+          No se encontraron fragancias para "<strong>${query}</strong>"
+        </div>
+      `;
+      navSearchDropdown.classList.add('active');
+      return;
+    }
+
+    navSearchDropdown.innerHTML = '';
+    matchedProducts.forEach(prod => {
+      const item = document.createElement('div');
+      item.className = 'search-drop-item';
+      item.innerHTML = `
+        <img src="${prod.img}" alt="${prod.name}" class="search-drop-thumb">
+        <div class="search-drop-info">
+          <span class="search-drop-name">${prod.name}</span>
+          <span class="search-drop-sub">${prod.brand} • ${prod.badge}</span>
+        </div>
+        <span class="search-drop-price">Desde S/ ${prod.pricing['10ml'].pen}</span>
+      `;
+
+      item.addEventListener('click', () => {
+        const targetCard = document.querySelector(`.product-card[data-id="${prod.id}"]`);
+        if (targetCard) {
+          navbarSearchInput.value = prod.name;
+          filterCatalog(false);
+          navSearchDropdown.classList.remove('active');
+
+          if (navSearchContainer && window.innerWidth <= 990) {
+            navSearchContainer.classList.remove('open');
+          }
+
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetCard.classList.remove('card-highlight-glow');
+          void targetCard.offsetWidth;
+          targetCard.classList.add('card-highlight-glow');
+        }
+      });
+
+      navSearchDropdown.appendChild(item);
+    });
+
+    navSearchDropdown.classList.add('active');
+  }
+
+  function filterCatalog(shouldScroll = false) {
+    const rawQuery = navbarSearchInput ? navbarSearchInput.value.trim() : '';
+    const normQuery = normalizeSearchText(rawQuery);
+    const tokens = normQuery.split(/\s+/).filter(Boolean);
+
+    // Si el usuario escribe una búsqueda, buscamos en todo el inventario
+    if (tokens.length > 0) {
+      filterPills.forEach(p => p.classList.toggle('active', p.getAttribute('data-category') === 'all'));
+    }
+
     const activePill = document.querySelector('.filter-pill.active');
     const selectedCategory = activePill ? activePill.getAttribute('data-category') : 'all';
 
     let visibleCount = 0;
+    const matchedProducts = [];
 
     productCards.forEach(card => {
-      const name = card.getAttribute('data-name').toLowerCase();
-      const brand = card.getAttribute('data-brand').toLowerCase();
-      const notes = card.getAttribute('data-notes').toLowerCase();
+      const id = card.getAttribute('data-id');
+      const searchData = normalizeSearchText(
+        (card.getAttribute('data-search') || '') + ' ' +
+        (card.getAttribute('data-name') || '') + ' ' +
+        (card.getAttribute('data-brand') || '') + ' ' +
+        (card.getAttribute('data-notes') || '') + ' ' +
+        (card.getAttribute('data-category') || '') + ' ' +
+        card.textContent
+      );
       const category = card.getAttribute('data-category');
 
-      const matchesQuery = !query || name.includes(query) || brand.includes(query) || notes.includes(query);
-      const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+      // Coincidencia inteligente: cada palabra debe estar presente
+      const matchesQuery = tokens.length === 0 || tokens.every(token => searchData.includes(token));
+      const matchesCategory = tokens.length > 0 ? true : (selectedCategory === 'all' || category === selectedCategory);
 
       if (matchesQuery && matchesCategory) {
         card.style.display = 'flex';
         visibleCount++;
+        if (perfumesData[id] && !matchedProducts.some(p => p.id === id)) {
+          matchedProducts.push(perfumesData[id]);
+        }
       } else {
         card.style.display = 'none';
       }
@@ -271,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Counter Text
     if (resultsCounter) {
       if (visibleCount === 0) {
-        resultsCounter.textContent = query ? `No se encontraron fragancias para "${query}".` : 'No hay fragancias disponibles.';
+        resultsCounter.textContent = rawQuery ? `No se encontraron fragancias para "${rawQuery}".` : 'No hay fragancias disponibles.';
       } else {
         resultsCounter.textContent = `Mostrando ${visibleCount} de ${productCards.length} fragancias selectas`;
       }
@@ -279,7 +363,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle clear search button
     if (clearSearchBtn) {
-      clearSearchBtn.style.display = (query || window.innerWidth <= 990) ? 'flex' : 'none';
+      clearSearchBtn.style.display = (rawQuery || window.innerWidth <= 990) ? 'flex' : 'none';
+    }
+
+    // Live search dropdown
+    renderSearchDropdown(matchedProducts, rawQuery);
+
+    if (shouldScroll) {
+      const catalogEl = document.getElementById('catalogo');
+      if (catalogEl) {
+        catalogEl.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 
@@ -298,17 +392,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (navbarSearchInput) {
     navbarSearchInput.addEventListener('input', () => {
-      filterCatalog();
-      const catalogEl = document.getElementById('catalogo');
-      if (catalogEl && navbarSearchInput.value.trim().length === 1) {
-        catalogEl.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Filtrado instantáneo SIN scrolls involuntarios mientras escribe
+      filterCatalog(false);
     });
 
     navbarSearchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (navSearchDropdown) navSearchDropdown.classList.remove('active');
+        filterCatalog(true);
+        if (window.innerWidth <= 990 && navSearchContainer) {
+          navSearchContainer.classList.remove('open');
+        }
+      } else if (e.key === 'Escape') {
         navbarSearchInput.value = '';
-        filterCatalog();
+        if (navSearchDropdown) navSearchDropdown.classList.remove('active');
+        filterCatalog(false);
         if (navSearchContainer) navSearchContainer.classList.remove('open');
       }
     });
@@ -319,15 +418,20 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       if (navbarSearchInput) {
         navbarSearchInput.value = '';
-        filterCatalog();
       }
+      if (navSearchDropdown) {
+        navSearchDropdown.classList.remove('active');
+        navSearchDropdown.innerHTML = '';
+      }
+      filterCatalog(false);
       if (navSearchContainer) navSearchContainer.classList.remove('open');
     });
   }
 
-  // Close search if clicking outside
+  // Close search dropdown if clicking outside
   document.addEventListener('click', (e) => {
     if (navSearchContainer && !navSearchContainer.contains(e.target)) {
+      if (navSearchDropdown) navSearchDropdown.classList.remove('active');
       if (navbarSearchInput && !navbarSearchInput.value.trim()) {
         navSearchContainer.classList.remove('open');
       }
@@ -338,7 +442,11 @@ document.addEventListener('DOMContentLoaded', () => {
     pill.addEventListener('click', () => {
       filterPills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
-      filterCatalog();
+      if (navbarSearchInput) {
+        navbarSearchInput.value = '';
+      }
+      if (navSearchDropdown) navSearchDropdown.classList.remove('active');
+      filterCatalog(false);
     });
   });
 
@@ -504,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      let orderSummary = "*PEDIDO LUVARIA HAUTE PARFUMERIE*%0A%0A";
+      let orderSummary = "*PEDIDO LUVARIA FRAGANCE*%0A%0A";
       let totalPen = 0;
 
       cart.forEach((item, i) => {
@@ -516,8 +624,8 @@ document.addEventListener('DOMContentLoaded', () => {
       orderSummary += `%0A-------------------------------%0A`;
       orderSummary += `*INVERSIÓN TOTAL:* S/ ${totalPen}%0A`;
       orderSummary += `*DESTINO:* Lima / Provincias (Perú)%0A`;
-      orderSummary += `*MÉTODO DE ENVÍO:* Shalom / Olva Courier%0A%0A`;
-      orderSummary += `_Hola Luvaria, deseo coordinar el pago y envío de este pedido._`;
+      orderSummary += `*MÉTODO DE ENVÍO:* Shalom o Motorizado%0A%0A`;
+      orderSummary += `_Hola Luvaria Fragance, deseo coordinar el pago y envío de este pedido._`;
 
       const whatsappUrl = `https://wa.me/51986005143?text=${orderSummary}`;
       window.open(whatsappUrl, '_blank');
@@ -690,7 +798,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update WhatsApp inquiry button text & link
     if (catalogWhatsappOrderBtn) {
-      catalogWhatsappOrderBtn.href = `https://wa.me/51986005143?text=Hola%20Luvaria,%20estoy%20viendo%20el%20Cat%C3%A1logo%20Digital%20(P%C3%A1gina%20${pageNum})%20y%20deseo%20consultar%20por%20una%20fragancia.`;
+      catalogWhatsappOrderBtn.href = `https://wa.me/51986005143?text=Hola%20Luvaria%20Fragance,%20estoy%20viendo%20el%20Cat%C3%A1logo%20Digital%20(P%C3%A1gina%20${pageNum})%20y%20deseo%20consultar%20por%20una%20fragancia.`;
     }
 
     // Update active thumbnail
@@ -717,7 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fsCatalogImg.src = `assets/catalogo/${pageNum}.png`;
       if (fsModalTitle) fsModalTitle.textContent = `Página ${pageNum} de ${TOTAL_CATALOG_PAGES}`;
       if (fsWhatsappBtn) {
-        fsWhatsappBtn.href = `https://wa.me/51986005143?text=Hola%20Luvaria,%20deseo%20ordenar%20fragancias%20de%20la%20P%C3%A1gina%20${pageNum}%20del%20cat%C3%A1logo.`;
+        fsWhatsappBtn.href = `https://wa.me/51986005143?text=Hola%20Luvaria%20Fragance,%20deseo%20ordenar%20fragancias%20de%20la%20P%C3%A1gina%20${pageNum}%20del%20cat%C3%A1logo.`;
       }
     }
   }

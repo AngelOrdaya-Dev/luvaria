@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=17">
 </head>
 
 <body>
@@ -61,6 +61,7 @@
             <input type="text" id="navbar-search-input" placeholder="Buscar por marca o nota (Naxos, Elixir, Oud...)"
               autocomplete="off">
             <button class="clear-search-btn" id="clear-search-btn" aria-label="Cerrar búsqueda">✕</button>
+            <div class="nav-search-dropdown" id="nav-search-dropdown"></div>
           </div>
         </div>
 
@@ -177,7 +178,7 @@
         </div>
         <div class="trust-info">
           <h4>ENVÍOS A TODO EL PAÍS</h4>
-          <p>Vía Shalom y Motorizado</p>
+          <p>Vía Shalom o Motorizado</p>
         </div>
       </div>
 
@@ -248,7 +249,8 @@
 
         <!-- Product 1: Alexandria II -->
         <article class="product-card" data-category="nicho" data-id="alexandria-ii" data-name="Alexandria II"
-          data-brand="Xerjoff Italia" data-notes="lavanda palisandro canela rosa oud laotiano madera">
+          data-brand="Xerjoff Italia" data-notes="lavanda palisandro canela rosa oud laotiano madera"
+          data-search="alexandria 2 alexandria ii xerjoff italia nicho oud stars decant frasco 10ml 100ml lavanda palisandro canela rosa oud laotiano madera 250 2200">
           <div class="product-badge-strip">NICHO / OUD STARS</div>
           <div class="product-media-container">
             <img src="assets/images/Alexandr%C3%ADa.jpg" alt="Xerjoff Alexandria II" class="product-img">
@@ -287,7 +289,8 @@
 
         <!-- Product 2: Xerjoff Naxos -->
         <article class="product-card" data-category="nicho" data-id="1861-naxos" data-name="Xerjoff Naxos"
-          data-brand="Xerjoff Italia" data-notes="miel tabaco bergamota lavanda citricos vainilla">
+          data-brand="Xerjoff Italia" data-notes="miel tabaco bergamota lavanda citricos vainilla"
+          data-search="xerjoff naxos 1861 naxos xerjoff italia nicho coleccion 1861 decant frasco 10ml 100ml miel tabaco bergamota lavanda citricos vainilla sicilia 130 900">
           <div class="product-badge-strip">COLECCIÓN 1861</div>
           <div class="product-media-container">
             <img src="assets/images/Naxos.png" alt="Xerjoff Naxos" class="product-img">
@@ -326,7 +329,8 @@
 
         <!-- Product 3: Le Male Elixir -->
         <article class="product-card" data-category="disenador" data-id="le-male-elixir" data-name="Le Male Elixir"
-          data-brand="Jean Paul Gaultier" data-notes="miel haba tonka lavanda benjui tabaco ambar">
+          data-brand="Jean Paul Gaultier" data-notes="miel haba tonka lavanda benjui tabaco ambar"
+          data-search="le male elixir jpg jean paul gaultier disenador diseñador decant frasco 10ml 100ml miel haba tonka lavanda benjui tabaco ambar 60 530">
           <div class="product-badge-strip">LÍNEA DISEÑADOR</div>
           <div class="product-media-container">
             <img src="assets/images/JPG-Elixir.png" alt="Jean Paul Gaultier Le Male Elixir" class="product-img">
@@ -365,7 +369,8 @@
 
         <!-- Product 4: Khamrah Qahwa -->
         <article class="product-card" data-category="arabe" data-id="khamrah-qahwa" data-name="Khamrah Qahwa"
-          data-brand="Lattafa Pride Dubái" data-notes="cafe canela praline jengibre maderas ambar dulce">
+          data-brand="Lattafa Pride Dubái" data-notes="cafe canela praline jengibre maderas ambar dulce"
+          data-search="khamrah qahwa lattafa pride dubai dubái arabe árabe perfumery decant frasco 10ml 100ml cafe café canela praline praliné jengibre maderas ambar dulce 25 130">
           <div class="product-badge-strip">PERFUMERY ÁRABE</div>
           <div class="product-media-container">
             <img src="assets/images/Khamrah-Qhawa.png" alt="Lattafa Pride Dubái Khamrah Qahwa" class="product-img">
@@ -548,7 +553,7 @@
               </svg>
               <span>Pantalla Completa</span>
             </button>
-            <a href="https://wa.me/51986005143?text=Hola%20Luvaria,%20estoy%20viendo%20el%20Cat%C3%A1logo%20Digital%20(P%C3%A1gina%201)%20y%20deseo%20consultar%20por%20una%20fragancia."
+            <a href="https://wa.me/51986005143?text=Hola%20Luvaria%20Fragance,%20estoy%20viendo%20el%20Cat%C3%A1logo%20Digital%20(P%C3%A1gina%201)%20y%20deseo%20consultar%20por%20una%20fragancia."
               target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-order" id="catalog-whatsapp-order-btn">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -821,7 +826,7 @@
               <circle cx="5.5" cy="18.5" r="2.5"></circle>
               <circle cx="18.5" cy="18.5" r="2.5"></circle>
             </svg>
-            <span>Envíos por Shalom y Motorizado</span>
+            <span>Envíos por Shalom o Motorizado</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -883,7 +888,7 @@
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <path d="M16 10a4 4 0 0 1-8 0"></path>
         </svg>
-        <h3>Bolsa de la Maison (<span id="drawer-items-count">0</span>)</h3>
+        <h3>Bolsa Luvaria Fragance (<span id="drawer-items-count">0</span>)</h3>
       </div>
       <button class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar bolsa">✕</button>
     </div>
@@ -904,7 +909,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
-        <span>Envío protegido y certificado a todo el Perú</span>
+        <span>Envío por Shalom o Motorizado</span>
       </div>
 
       <button class="btn btn-whatsapp-checkout" id="whatsapp-checkout-btn">
@@ -1016,7 +1021,7 @@
           <button class="btn btn-secondary" id="fs-prev-btn">← Página Anterior</button>
           <button class="btn btn-secondary" id="fs-next-btn">Página Siguiente →</button>
         </div>
-        <a href="https://wa.me/51986005143?text=Hola%20Luvaria,%20deseo%20ordenar%20fragancias%20de%20esta%20p%C3%A1gina%20del%20cat%C3%A1logo."
+        <a href="https://wa.me/51986005143?text=Hola%20Luvaria%20Fragance,%20deseo%20ordenar%20fragancias%20de%20esta%20p%C3%A1gina%20del%20cat%C3%A1logo."
           target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="fs-whatsapp-btn">
           <span>Pedir vía WhatsApp (+51 986 005 143)</span>
         </a>
@@ -1025,7 +1030,7 @@
   </div>
 
   <!-- Floating Concierge WhatsApp Action Button -->
-  <a href="https://wa.me/51986005143?text=Hola%20Luvaria,%20deseo%20asesor%C3%ADa%20olfativa%20personalizada%20sobre%20sus%20perfumes."
+  <a href="https://wa.me/51986005143?text=Hola%20Luvaria%20Fragance,%20deseo%20asesor%C3%ADa%20olfativa%20personalizada%20sobre%20sus%20perfumes."
     target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn"
     aria-label="Asesoría directa WhatsApp Concierge (+51 986 005 143)">
     <div class="floating-tooltip">¿Deseas asesoría? <strong>+51 986 005 143</strong></div>
@@ -1041,7 +1046,7 @@
   <div class="toast-container" id="toast-container"></div>
 
   <!-- JavaScript -->
-  <script src="app.js?v=16"></script>
+  <script src="app.js?v=17"></script>
 </body>
 
 </html>
