@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle clear search button
     if (clearSearchBtn) {
-      clearSearchBtn.style.display = query ? 'block' : 'none';
+      clearSearchBtn.style.display = (query || window.innerWidth <= 990) ? 'flex' : 'none';
     }
   }
 
