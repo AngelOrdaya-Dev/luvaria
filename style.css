@@ -3354,35 +3354,340 @@ button {
   border-radius: 2px;
 }
 
-/* Fullscreen Catalog Modal */
+/* Fullscreen Catalog Modal (Luxury Responsive Lightbox) */
+#catalog-fullscreen-modal {
+  padding: 16px;
+  background: rgba(3, 3, 6, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 3000;
+}
+
 .catalog-fullscreen-window {
-  max-width: 820px;
+  width: 100%;
+  max-width: 860px;
+  height: 94vh;
   max-height: 94vh;
   display: flex;
   flex-direction: column;
+  background: #09090D;
+  border: 1px solid var(--gold-border);
+  border-radius: 12px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 175, 55, 0.18);
+  overflow: hidden;
 }
 
+/* Header */
+.catalog-fs-header {
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #121219 0%, #0c0c12 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  flex-shrink: 0;
+}
+
+.catalog-fs-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.catalog-fs-header-info .modal-overline {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-primary);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.catalog-fs-header-info .modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.catalog-fs-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.catalog-fs-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.catalog-fs-action-btn:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-border);
+  background: rgba(212, 175, 55, 0.15);
+  transform: scale(1.05);
+}
+
+/* Viewer Body */
 .catalog-fs-body {
-  padding: 16px;
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #070709;
-  overflow-y: auto;
-  max-height: 76vh;
+  background: #050508;
+  padding: 8px 12px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.fs-img-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .fs-catalog-img {
   max-width: 100%;
-  max-height: 72vh;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 4px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  cursor: zoom-in;
+}
+
+/* Zoomed mode */
+.catalog-fs-body.is-zoomed {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.catalog-fs-body.is-zoomed .fs-img-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.catalog-fs-body.is-zoomed .fs-catalog-img {
+  max-width: none;
+  max-height: none;
+  width: 155%;
+  cursor: zoom-out;
+}
+
+/* Lateral Side Navigation Arrows */
+.fs-side-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 14, 20, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold-light);
+  cursor: pointer;
+  z-index: 15;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.75);
+}
+
+.fs-side-arrow:hover {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: var(--gold-primary);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.fs-side-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.fs-side-prev {
+  left: 14px;
+}
+
+.fs-side-next {
+  right: 14px;
+}
+
+/* Footer */
+.catalog-fs-footer {
+  padding: 12px 18px;
+  background: linear-gradient(180deg, #0b0b10 0%, #08080c 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .fs-nav-group {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
+  width: 100%;
+}
+
+.fs-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: 1px solid var(--gold-border);
+  background: rgba(212, 175, 55, 0.06);
+  color: var(--gold-light);
+  cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
+  transition: all var(--transition-fast);
+}
+
+.fs-nav-btn:hover {
+  background: rgba(212, 175, 55, 0.16);
+  border-color: var(--gold-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.fs-nav-btn:active {
+  transform: translateY(0);
+}
+
+.fs-whatsapp-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #d4af37 0%, #b89326 100%);
+  color: #08080b !important;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.28);
+  transition: all var(--transition-fast);
+}
+
+.fs-whatsapp-cta:hover {
+  background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+  color: #000 !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsiveness for Catalog Lightbox */
+@media (max-width: 600px) {
+  #catalog-fullscreen-modal {
+    padding: 0;
+  }
+
+  .catalog-fullscreen-window {
+    width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border: none;
+  }
+
+  .catalog-fs-header {
+    padding: 8px 12px;
+  }
+
+  .catalog-fs-header-info .modal-overline {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+  }
+
+  .catalog-fs-header-info .modal-title {
+    font-size: 1.05rem;
+  }
+
+  .catalog-fs-action-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .catalog-fs-body {
+    padding: 4px 6px;
+  }
+
+  .fs-side-arrow {
+    width: 38px;
+    height: 38px;
+    background: rgba(10, 10, 14, 0.88);
+  }
+
+  .fs-side-prev {
+    left: 8px;
+  }
+
+  .fs-side-next {
+    right: 8px;
+  }
+
+  .catalog-fs-footer {
+    padding: 8px 10px 10px;
+    gap: 6px;
+  }
+
+  .fs-nav-group {
+    gap: 8px;
+  }
+
+  .fs-nav-btn {
+    padding: 8px 6px;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    gap: 5px;
+  }
+
+  .fs-nav-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .fs-whatsapp-cta {
+    padding: 8px 10px;
+    font-size: 0.76rem;
+  }
 }
 
 /* ==========================================================================
@@ -3509,6 +3814,9 @@ button {
   padding: 2px 6px;
   transition: color var(--transition-fast);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .clear-search-btn:hover {
@@ -3966,6 +4274,377 @@ button {
   }
 }
 
+/* ==========================================================================
+   LUVARIA FEATURE ENHANCEMENTS: GENDER FILTERS, SENSORY MODAL & CHECKOUT
+   ========================================================================== */
 
+/* Gender Sub-Filters Toolbar */
+.gender-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
+.gender-filter-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--gold-primary);
+  font-weight: 700;
+  margin-right: 4px;
+}
 
+.gender-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all var(--transition-fast);
+}
+
+.gender-pill:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-border);
+}
+
+.gender-pill.active {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Stock & Availability Badges on Product Cards */
+.stock-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.stock-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--whatsapp-color);
+  box-shadow: 0 0 6px rgba(37, 211, 102, 0.6);
+  flex-shrink: 0;
+}
+
+.stock-status-dot.gold {
+  background: var(--gold-primary);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+}
+
+/* Sensory Olfactory Quick-View Modal */
+.olfactory-modal-window {
+  max-width: 820px;
+  width: 95%;
+  max-height: 90vh;
+  background: #0B0B10;
+  border: 1px solid var(--gold-border);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.olfactory-modal-body {
+  max-height: calc(90vh - 84px);
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.olfactory-modal-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 780px) {
+  .olfactory-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.olf-img-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: #070709;
+}
+
+.olf-bottle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.olf-img-wrapper:hover .olf-bottle-img {
+  transform: scale(1.05);
+}
+
+.olf-badge-floating {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(7, 7, 9, 0.9);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.olf-specs-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.olf-spec-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 6px;
+  padding: 8px 4px;
+}
+
+.spec-label {
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.spec-val {
+  font-size: 0.78rem;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.olf-brand-line {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.olf-description {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+/* Visual Olfactory Pyramid */
+.olf-pyramid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pyramid-tier {
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: rgba(20, 20, 28, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all var(--transition-fast);
+}
+
+.pyramid-tier:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.06);
+  transform: translateX(4px);
+}
+
+.tier-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.tier-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--gold-light);
+}
+
+.tier-icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--gold-primary);
+}
+
+.tier-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+}
+
+.tier-notes {
+  font-size: 0.76rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.olf-modal-actions {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.olf-presentation-choice {
+  display: flex;
+  gap: 8px;
+}
+
+.olf-pricing-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.olf-action-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-add-modal {
+  flex: 1.2;
+  min-width: 180px;
+  padding: 12px 18px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sommelier-modal {
+  flex: 1;
+  min-width: 160px;
+  padding: 12px 16px;
+  font-size: 0.74rem;
+  text-align: center;
+}
+
+/* Cart Delivery Destination Customizer */
+.cart-delivery-selector-wrap {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  border-radius: 6px;
+}
+
+.cart-input-label {
+  display: block;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+
+.cart-delivery-select,
+.cart-order-notes-input {
+  width: 100%;
+  padding: 9px 12px;
+  background: #0E0E14;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+  font-size: 0.76rem;
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.cart-delivery-select:focus,
+.cart-order-notes-input:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+}
+
+.cart-delivery-select option {
+  background: #0E0E14;
+  color: #FFFFFF;
+}
+
+/* Delivery with clean SVG icons */
+.delivery-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.delivery-field-icon {
+  position: absolute;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: var(--gold-primary);
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+}
+
+.delivery-field-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cart-delivery-select.has-icon,
+.cart-order-notes-input.has-icon {
+  padding-left: 34px;
+}
+
+.fs-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pulse-play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3px;
+}
