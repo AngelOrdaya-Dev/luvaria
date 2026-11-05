@@ -1,5 +1,5 @@
 /**
- * LUVARIA — HAUTE PARFUMERIE
+ * LUVARIA FRAGANCE
  * Core Interactive Application Logic
  * Upgraded with: Sensory Olfactory Pyramids, Dynamic Catalog, Stock Badges & WhatsApp Checkout
  */
