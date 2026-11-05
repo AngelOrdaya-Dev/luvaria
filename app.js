@@ -1070,7 +1070,7 @@ document.addEventListener('DOMContentLoaded', () => {
         brand: 'Selección al Azar en TikTok Live',
         size: '2x10ml',
         sizeLabel: '2 x 10 ML (AL AZAR EN LIVE)',
-        pricePen: 40,
+        pricePen: 45,
         qty: 1,
         img: 'assets/images/Decants.png'
       });
