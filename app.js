@@ -619,7 +619,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (olfModalWaBtn) {
-      olfModalWaBtn.href = `https://wa.me/51986005143?text=${encodeURIComponent(`Hola Luvaria Fragance, deseo consultar más detalles sobre la fragancia *${prod.name}* (${prod.brand}).`)}`;
+      olfModalWaBtn.href = `https://wa.me/51986005143?text=${encodeURIComponent(`¡Hola Luvaria! Me interesa el perfume *${prod.name}*, ¿tienen stock disponible?`)}`;
     }
 
     olfactoryModal.classList.add('active');
@@ -1037,26 +1037,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const notes = cartOrderNotes ? cartOrderNotes.value.trim() : '';
 
       let totalPen = 0;
-      const itemsListText = cart.map((item, idx) => {
+      const itemsListText = cart.map((item) => {
         const subtotal = item.pricePen * item.qty;
         totalPen += subtotal;
-        return `${idx + 1}. *${item.name}* (${item.brand})\n   • Presentación: ${item.sizeLabel}\n   • Cantidad: ${item.qty}\n   • Subtotal: S/ ${subtotal.toFixed(2)}`;
-      }).join('\n\n');
+        return `• ${item.name} (${item.sizeLabel}) x${item.qty} — S/ ${subtotal.toFixed(2)}`;
+      }).join('\n');
 
-      const messageParts = [
-        '*ORDEN DE COMPRA — LUVARIA HAUTE PARFUMERIE*',
-        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-        '*DETALLE DE LA BOLSA:*',
-        itemsListText,
-        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-        `*INVERSIÓN TOTAL:* S/ ${totalPen.toFixed(2)}`,
-        `*MODALIDAD DE ENTREGA:* ${deliveryMode}`,
-        notes ? `*DETALLE ADICIONAL / TIKTOK:* ${notes}` : '',
-        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-        '_Hola Luvaria Fragance, adjunto mi pedido para coordinar el pago (Yape/Plin/Transferencia) y el despacho con su sommelier. ¡Muchas gracias!_'
-      ].filter(Boolean);
+      let finalMessage = `¡Hola Luvaria! Quiero hacer este pedido:\n\n${itemsListText}\n\n*Total:* S/ ${totalPen.toFixed(2)}\n*Entrega:* ${deliveryMode}`;
+      if (notes) {
+        finalMessage += `\n*Nota:* ${notes}`;
+      }
+      finalMessage += `\n\n¿Me confirman para hacer el pago por Yape/Transferencia? ¡Gracias!`;
 
-      const finalMessage = messageParts.join('\n');
       const whatsappUrl = `https://wa.me/51986005143?text=${encodeURIComponent(finalMessage)}`;
       window.open(whatsappUrl, '_blank');
     });
@@ -1194,7 +1186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (catalogWhatsappOrderBtn) {
-      catalogWhatsappOrderBtn.href = `https://wa.me/51986005143?text=${encodeURIComponent(`Hola Luvaria Fragance, estoy viendo el Catálogo Digital (Página ${pageNum}) y deseo consultar por una fragancia.`)}`;
+      catalogWhatsappOrderBtn.href = `https://wa.me/51986005143?text=${encodeURIComponent(`¡Hola! Estoy viendo la página ${pageNum} del catálogo, ¿tienen disponible esta fragancia?`)}`;
     }
 
     if (catalogThumbnailsRail) {
@@ -1223,7 +1215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 90);
       if (fsModalTitle) fsModalTitle.textContent = `Página ${pageNum} de ${TOTAL_CATALOG_PAGES}`;
       if (fsWhatsappBtn) {
-        fsWhatsappBtn.href = `https://wa.me/51986005143?text=${encodeURIComponent(`Hola Luvaria Fragance, deseo ordenar fragancias de la Página ${pageNum} del catálogo digital.`)}`;
+        fsWhatsappBtn.href = `https://wa.me/51986005143?text=${encodeURIComponent(`¡Hola! Estoy viendo la página ${pageNum} del catálogo, ¿tienen disponible esta fragancia?`)}`;
       }
     }
   }
