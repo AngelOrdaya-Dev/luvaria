@@ -278,6 +278,897 @@ document.addEventListener('DOMContentLoaded', () => {
         '10ml': { pen: 40, label: '10 ML (DECANT)' },
         '100ml': { pen: 240, label: '100 ML (FRASCO)' }
       }
+    },
+
+    'veneno-blanco': {
+      id: 'veneno-blanco',
+      name: 'Veneno Blanco',
+      brand: 'French Avenue',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'FRENCH AVENUE',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Floral blanco, maderas nobles, cítricos vibrantes, notas lactónicas cremosas y coco.',
+      description: 'Una composición magnética de French Avenue para caballero. Destaca por su corazón floral blanco luminoso fusionado con matices lactónicos de coco y una sólida base amaderada que deja estela.',
+      pyramid: {
+        top: 'Cítricos frescos, Especias sutiles, Notas verdes',
+        heart: 'Floral blanco, Flores amarillas, Acorde lactónico cremoso, Coco',
+        base: 'Maderas nobles, Vainilla suave, Ámbar cálido'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Seductora y Notable',
+        occasion: 'Citas, Salidas Nocturnas, Clima Templado'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 170, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'vulcan-feu': {
+      id: 'vulcan-feu',
+      name: 'Vulcan Feu',
+      brand: 'French Avenue',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'FRENCH AVENUE',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Acorde tropical, frutas dulces jugosas, cítricos brillantes, maderas nobles y ámbar.',
+      description: 'Energía ardiente y fresca. Vulcan Feu combina la efervescencia de frutas tropicales confitadas con cítricos punzantes y un fondo ambarado profundo de alta duración.',
+      pyramid: {
+        top: 'Frutas tropicales, Cítricos vibrantes, Acorde fresco',
+        heart: 'Frutas dulces maceradas, Especias frescas, Notas terpénicas',
+        base: 'Ámbar cálido, Maderas aromáticas, Almizcle limpio'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Vibrante y Envolvente',
+        occasion: 'Verano, Tardes, Salidas Casuales Elegantes'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 170, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    '9pm-afnan': {
+      id: '9pm-afnan',
+      name: '9PM Clásico',
+      brand: 'Afnan Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'VIRAL / ULTRA MALE VIBES',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/lemale.jpg',
+      notes: 'Manzana crujiente, canela dulce, lavanda silvestre, vainilla y haba tonka.',
+      description: 'El rey indiscutible de la fiesta y la noche. Una bomba de manzana con canela especiada y vainilla que proyecta a metros de distancia, inspirada en el perfil seductor de Ultra Male.',
+      pyramid: {
+        top: 'Manzana fresca, Canela de Ceilán, Lavanda silvestre, Bergamota',
+        heart: 'Flor de azahar del naranjo, Lirio de los valles',
+        base: 'Vainilla Bourbon, Haba tonka tostada, Ámbar cálido, Pachulí'
+      },
+      specs: {
+        duration: '7 - 8h',
+        sillage: 'Modo Fiesta (Pesada)',
+        occasion: 'Fiesta, Conquista, Noche, Citas'
+      },
+      pricing: {
+        '10ml': { pen: 22, label: '10 ML (DECANT)' },
+        '100ml': { pen: 140, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'vintage-radio': {
+      id: 'vintage-radio',
+      name: 'Vintage Radio',
+      brand: 'Lattafa Pride',
+      category: 'arabe',
+      gender: 'unisex',
+      badge: 'INSPIRADO EN PARAGON',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Ciruela jugosa, lavanda silvestre, pimienta negra, palo santo místico y maderas.',
+      description: 'Una creación sofisticada de la línea Pride. Abre con una ciruela negra aromática y evoluciona hacia notas sagradas de palo santo y lavanda con una longevidad excepcional.',
+      pyramid: {
+        top: 'Ciruela jugosa, Lavanda aromática, Bergamota de Calabria',
+        heart: 'Salvia romana, Palo santo místico, Pimienta negra',
+        base: 'Madera de sándalo, Madera de ámbar, Almizcle suave'
+      },
+      specs: {
+        duration: '9 - 10h',
+        sillage: 'Sofisticada y Duradera',
+        occasion: 'Oficina, Eventos, Firma Personal'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 165, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'musamam-black-intense': {
+      id: 'musamam-black-intense',
+      name: 'Musamam Black Intense',
+      brand: 'Lattafa Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'SERPIENTE NEGRA',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Maderas oscuras, especias frescas, cuero fino, lavanda noble y ámbar resinoso.',
+      description: 'Una presencia oscura y señorial. Presentado con la icónica serpiente en relieve, ofrece un aroma amaderado, especiado y con acordes de cuero elegante de altísima fijación.',
+      pyramid: {
+        top: 'Mandarina italiana, Cardamomo aromático, Lavanda fresca',
+        heart: 'Geranio, Madera de cedro, Notas especiadas nobles',
+        base: 'Cuero oscuro, Pachulí terroso, Incienso, Ámbar'
+      },
+      specs: {
+        duration: '9 - 10h',
+        sillage: 'Imponente y Masculina',
+        occasion: 'Noche, Citas, Eventos Formales'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'shaheen-silver': {
+      id: 'shaheen-silver',
+      name: 'Shaheen Silver',
+      brand: 'Lattafa Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'HALCÓN PLATEADO / AVENTUS VIBES',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Grosella negra crujiente, bergamota, musgo de roble, pachulí terroso y ámbar gris.',
+      description: 'El poder del halcón real plasmado en un perfume cítrico, ahumado y terroso. Su apertura de bergamota y grosellas da paso a un musgo de roble masculino que transmite éxito.',
+      pyramid: {
+        top: 'Bergamota de Calabria, Grosella negra crujiente',
+        heart: 'Pachulí terroso, Rosa silvestre, Notas florales nobles',
+        base: 'Musgo de roble, Almizcle, Ámbar gris ahumado'
+      },
+      specs: {
+        duration: '7 - 8h',
+        sillage: 'Moderna y Ejecutiva',
+        occasion: 'Negocios, Día a Día, Conquista'
+      },
+      pricing: {
+        '10ml': { pen: 35, label: '10 ML (DECANT)' },
+        '100ml': { pen: 180, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'al-awwal-red': {
+      id: 'al-awwal-red',
+      name: 'Al Awwal Red',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'ZAKAT LUXURY',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Cítricos maduros, especias ardientes, fondo dulce acaramelado, lavanda y maderas.',
+      description: 'Frasco coronado de rubí que encierra una mezcla especiada intensa y seductora. Abre con cítricos chispeantes y se asienta en un fondo cálido de ámbar y maderas profundas.',
+      pyramid: {
+        top: 'Cítricos energizantes, Especias cálidas',
+        heart: 'Lavanda aromática, Flores nobles, Notas terrosas',
+        base: 'Maderas orientales, Almizcle sedoso, Ámbar metálico'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Pesada y Magnética',
+        occasion: 'Noche, Salidas Especiales, Clima Fresco'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 175, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'bharara-king-chocolate': {
+      id: 'bharara-king-chocolate',
+      name: 'Bharara King Chocolate',
+      brand: 'Bharara King',
+      category: 'nicho',
+      gender: 'hombre',
+      badge: 'GOURMAND OSCURO',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Cacao aromático, vainilla pura, notas ambaradas, lavanda dulce y maderas tostadas.',
+      description: 'Una versión gourmand opulenta del aclamado Bharara King. Destaca por una nota cremosa y profunda de cacao y chocolate fino que envuelve a quien lo lleva durante horas.',
+      pyramid: {
+        top: 'Cacao aromático, Vainilla Bourbon, Notas dulces',
+        heart: 'Especias suaves, Lavanda fina, Acorde chocolatoso',
+        base: 'Ámbar cálido, Haba tonka, Maderas atalcadas'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Densa y Adictiva',
+        occasion: 'Citas Románticas, Noche, Clima Frío'
+      },
+      pricing: {
+        '10ml': { pen: 40, label: '10 ML (DECANT)' },
+        '100ml': { pen: 280, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'kingdom-of-kings': {
+      id: 'kingdom-of-kings',
+      name: 'Kingdom of Kings',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'ZAKAT ROYALTY',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Cítricos frescos, notas marinas, frutas dulces, flores blancas y maderas nobles.',
+      description: 'Una corona olfativa para el hombre moderno. Combina acordes cítricos y marinos vigorizantes con un corazón frutal que evoluciona hacia una base amaderada y almizclada de gran porte.',
+      pyramid: {
+        top: 'Cítricos vibrantes, Acorde marino oceánico',
+        heart: 'Frutas dulces, Flores blancas suaves',
+        base: 'Maderas preciosas, Almizcle blanco, Ámbar'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Limpia y Majestuosa',
+        occasion: 'Día a Día, Oficina, Eventos de Verano'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'asad-elixir': {
+      id: 'asad-elixir',
+      name: 'Asad Elixir',
+      brand: 'Lattafa Pride',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'EDICIÓN ESPECIAL ASAD',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Asad%20Bourbon.jpg',
+      notes: 'Pimienta negra, tabaco rubio dulce, café espresso, vainilla oscura y maderas.',
+      description: 'Concentración elixir del éxito de Lattafa. Eleva la intensidad del café tostado y el tabaco con notas ahumadas de ámbar y vainilla resinosa para una proyección rotunda.',
+      pyramid: {
+        top: 'Pimienta negra, Piña caramelizada, Especias orientales',
+        heart: 'Café tostado espresso, Tabaco rubio, Pachulí',
+        base: 'Vainilla resinosa, Ámbar seco, Maderas de cedro'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Potente y Masculina',
+        occasion: 'Salidas Nocturnas, Eventos, Citas'
+      },
+      pricing: {
+        '10ml': { pen: 25, label: '10 ML (DECANT)' },
+        '100ml': { pen: 140, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'musamam-white-intense': {
+      id: 'musamam-white-intense',
+      name: 'Musamam White Intense',
+      brand: 'Lattafa Perfumes',
+      category: 'arabe',
+      gender: 'unisex',
+      badge: 'SERPIENTE DORADA',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Coco cremoso, cítricos brillantes, sándalo cálido, flores amarillas y ámbar.',
+      description: 'El lujo del verano embotellado. Abre con una explosión cítrica y se transforma en un velo cremoso de coco, sándalo y flores blancas que transmite sofisticación relajada.',
+      pyramid: {
+        top: 'Bergamota brillante, Naranja dulce, Especias cálidas',
+        heart: 'Coco sedoso, Ylang-ylang, Flores blancas',
+        base: 'Sándalo cremoso, Almizcle blanco, Benjuí, Ámbar'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Cremosa y Envolvente',
+        occasion: 'Tardes Cálidas, Vacaciones, Firma Personal'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 165, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'ghazal-edge': {
+      id: 'ghazal-edge',
+      name: 'Ghazal Edge',
+      brand: 'Ghazal',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'ORIENTAL ESPECIADO',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Canela dulce, vainilla cremosa, especias aromáticas, flores blancas y ámbar.',
+      description: 'Una joya dorada oriental. Sus acordes especiados de canela y vainilla equilibran la calidez del ámbar con notas aromáticas limpias que fascinan desde el primer spray.',
+      pyramid: {
+        top: 'Canela pura, Especias dulces, Cítricos ligeros',
+        heart: 'Vainilla cremosa, Flores blancas, Almizcle aromático',
+        base: 'Ámbar profundo, Haba tonka, Maderas atalcadas'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Cálida y Seductora',
+        occasion: 'Noche, Citas, Clima Templado'
+      },
+      pricing: {
+        '10ml': { pen: 35, label: '10 ML (DECANT)' },
+        '100ml': { pen: 180, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'al-awwal-blanco': {
+      id: 'al-awwal-blanco',
+      name: 'Al Awwal Blanco',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'ZAKAT WHITE GOLD',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Frutas maduras, especias dulces cálidas, notas florales elegantes y maderas.',
+      description: 'Elegancia pura en frasco blanco con corona dorada. Ofrece un perfil frutal y especiado sumamente versátil que resalta la pulcritud y el porte masculino.',
+      pyramid: {
+        top: 'Frutas dulces maduras, Toque cítrico',
+        heart: 'Especias cálidas, Notas florales nobles',
+        base: 'Maderas suaves, Almizcle, Ámbar'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Limpia y Versátil',
+        occasion: 'Diario, Oficina, Reuniones'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'parfum-z23': {
+      id: 'parfum-z23',
+      name: 'Parfum Z23',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'COÑAC & OUD',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Coñac licoroso, cítrico chispeante, especias finas, madera de oud y ámbar resinoso.',
+      description: 'Frasco turquesa y dorado inspirado en los licores nobles de barrica. Notas de coñac añejado y oud combinadas con cítricos vibrantes que crean una impresión inolvidable.',
+      pyramid: {
+        top: 'Cítricos vibrantes, Cardamomo especiado',
+        heart: 'Coñac añejado en barrica, Especias orientales',
+        base: 'Madera de oud noble, Ámbar dorado, Cedro'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Licorosa y Exclusiva',
+        occasion: 'Noche, Salidas Elegantes, Clima Fresco'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 170, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'astoria-midnight': {
+      id: 'astoria-midnight',
+      name: 'Astoria Midnight',
+      brand: 'Astoria',
+      category: 'nicho',
+      gender: 'hombre',
+      badge: 'CUERO & CARAMELO',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Flores dulces, ámbar caramelizado, azafrán, canela ardiente, cuero y vainilla.',
+      description: 'Misterio nocturno en botella de lujo. Fusiona la densidad del caramelo y el azafrán con un cuero suave aterciopelado que evoca los clubes privados más selectos.',
+      pyramid: {
+        top: 'Azafrán rojo, Canela cálida, Notas florales dulces',
+        heart: 'Ámbar caramelizado, Haba tonka cremosa',
+        base: 'Cuero suave aterciopelado, Maderas nobles, Vainilla'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Intriga y Alta Proyección',
+        occasion: 'Noche, Citas, Eventos de Gala'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 165, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'parfum-z31': {
+      id: 'parfum-z31',
+      name: 'Parfum Z31',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'FRESCO & VERDE NOBLE',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Bergamota fresca, brisa marina, lavanda silvestre, maderas terrosas e incienso.',
+      description: 'Frasco negro con pedrería brillante que encierra una frescura oceánica y verde. La bergamota y la lavanda se entrelazan con maderas nobles y un velo tenue de incienso.',
+      pyramid: {
+        top: 'Bergamota ácida, Acorde verde fresco, Notas ozónicas',
+        heart: 'Lavanda francesa, Especias suaves, Notas marinas',
+        base: 'Maderas terrosas, Incienso místico, Ámbar'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Vigorosa y Elegante',
+        occasion: 'Día a Día, Oficina, Tardes'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'parfum-z29': {
+      id: 'parfum-z29',
+      name: 'Parfum Z29',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'hombre',
+      badge: 'CÍTRICO & CARAMELO',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Limón y menta fresca, canela, caramelo avainillado, maderas y musgo.',
+      description: 'El contraste perfecto entre el frío cítrico y el calor acaramelado. Abre con una explosión refrescante de menta y limón italiano antes de fundirse en caramelo tostado.',
+      pyramid: {
+        top: 'Limón italiano, Menta piperita, Bergamota',
+        heart: 'Canela dulce, Cardamomo, Acorde aromático herbal',
+        base: 'Caramelo derretido, Vainilla, Maderas nobles, Musgo'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Magnética y Adictiva',
+        occasion: 'Tardes, Citas, Ocasiones Casuales'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'eclaire-banoffi': {
+      id: 'eclaire-banoffi',
+      name: 'Eclaire Banoffi',
+      brand: 'Lattafa Perfumes',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'BANOFFEE PIE GOURMAND',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Eclaire.jpg',
+      notes: 'Plátano caramelizado, toffee dulce, crema batida lactónica y vainilla pura.',
+      description: 'El postre inglés Banoffee convertido en perfume adictivo. Combina plátano maduro dulce con toffee espeso, crema batida y vainilla Bourbon que provoca cumplidos al instante.',
+      pyramid: {
+        top: 'Plátano dulce maduro, Caramelo derretido caliente',
+        heart: 'Toffee inglés, Acorde lactónico cremoso, Frutas tropicales',
+        base: 'Vainilla Bourbon, Galleta dorada, Almizcle esponjoso'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Adictiva y Dulce',
+        occasion: 'Citas Románticas, Tardes, Salidas de Ocio'
+      },
+      pricing: {
+        '10ml': { pen: 65, label: '10 ML (DECANT)' },
+        '100ml': { pen: 320, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'cherry-baby': {
+      id: 'cherry-baby',
+      name: 'Cherry Baby',
+      brand: 'Sabrina Carpenter',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'CEREZA & CHOCOLATE',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Sweet%20Tooth.jpg',
+      notes: 'Cereza glaseada, chocolate amargo, frutos rojos, ámbar cálido y maderas suaves.',
+      description: 'La tentación de la cereza dulce cubierta de chocolate negro. Una fragancia juvenil, coqueta y chic creada por Sabrina Carpenter que se ha convertido en obsesión de TikTok.',
+      pyramid: {
+        top: 'Cereza dulce acerezada, Manzana roja, Ciruela',
+        heart: 'Chocolate negro fundido, Pétalos de amapola, Vainilla',
+        base: 'Ámbar resinoso, Maderas de cachemira, Almizcle dulce'
+      },
+      specs: {
+        duration: '6 - 7h',
+        sillage: 'Dulce y Coqueta',
+        occasion: 'Uso Diario, Citas, Salidas de Chicas'
+      },
+      pricing: {
+        '10ml': { pen: 40, label: '10 ML (DECANT)' },
+        '100ml': { pen: 240, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'eilish-no2': {
+      id: 'eilish-no2',
+      name: 'Eilish N°2',
+      brand: 'Billie Eilish',
+      category: 'disenador',
+      gender: 'unisex',
+      badge: 'OSCURO & AMADERADO',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Flor de manzano, pimienta negra, incienso místico, pino y vainilla ahumada.',
+      description: 'Una visión misteriosa y sensual en busto metálico oscuro. Combina la frescura floral de la flor de manzano con la calidez terrosa de la pimienta negra, palo santo y resinas.',
+      pyramid: {
+        top: 'Bergamota italiana, Flor de manzano fresca',
+        heart: 'Pimienta negra, Papiro terroso, Flor de amapola silvestre',
+        base: 'Palo santo, Vainilla oscura, Almizcle, Ámbar cálido'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Oscura y Magnética',
+        occasion: 'Noche, Conciertos, Eventos Especiales'
+      },
+      pricing: {
+        '10ml': { pen: 65, label: '10 ML (DECANT)' },
+        '100ml': { pen: 380, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'vanilandia': {
+      id: 'vanilandia',
+      name: 'Vanilandia',
+      brand: 'Luvaria Gourmand',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'FRUTAS ROJAS & VAINILLA',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Frutas rojas glaseadas, crema chantilly, vainilla dulce y cítrico ligero.',
+      description: 'El perfume con forma de cupcake más adorable del catálogo. Su fragancia transporta a un mundo de fresas con crema batida, vainilla pura y un toque cítrico alegre.',
+      pyramid: {
+        top: 'Frutas rojas jugosas, Fresas silvestres, Toque cítrico',
+        heart: 'Crema pastelera, Vainilla de Madagascar, Caramelo',
+        base: 'Almizcle algodonoso, Azúcar glas, Vainilla pura'
+      },
+      specs: {
+        duration: '7 - 9h',
+        sillage: 'Tierna y Golosa',
+        occasion: 'Uso Diario, Tardes, Regalos'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 150, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'sweet-fantasy': {
+      id: 'sweet-fantasy',
+      name: 'Sweet Fantasy',
+      brand: 'Luvaria Gourmand',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'BLUE RASPBERRY & CHOCOLATE',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Frambuesa azul, chocolate cremoso, azúcar dulce, vainilla y notas cítricas.',
+      description: 'Frasco cupcake con dona que ofrece una fantasía de golosinas. Abre con frambuesa azul chispeante y se desliza hacia un chocolate cremoso con fondo de vainilla sedosa.',
+      pyramid: {
+        top: 'Frambuesa azul (blue raspberry), Azúcar cristalizado',
+        heart: 'Chocolate con leche, Notas dulces gourmand',
+        base: 'Vainilla cremosa, Almizcle dulce, Toque ambarado'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Divertida y Dulce',
+        occasion: 'Día a Día, Salidas con Amigas, Regalos'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 150, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'creamy-caramel': {
+      id: 'creamy-caramel',
+      name: 'Creamy Caramel',
+      brand: 'Luvaria Gourmand',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'DULCE DE LECHE & TOFFEE',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Caramelo derretido, dulce de leche, vainilla cremosa, azúcar morena tostada.',
+      description: 'Una sobredosis deliciosa de caramelo mantecoso y toffee recién preparado. Huele a caramelo salado con notas dulces suaves y un secado cálido muy confortable.',
+      pyramid: {
+        top: 'Caramelo salado caliente, Azúcar morena',
+        heart: 'Dulce de leche cremoso, Vainilla batida',
+        base: 'Toffee mantecoso, Almizcle limpio suave'
+      },
+      specs: {
+        duration: '6 - 7h',
+        sillage: 'Cálida y Acaramelada',
+        occasion: 'Tardes de Invierno, Citas, Cine'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 150, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'candylicious': {
+      id: 'candylicious',
+      name: 'Candylicious',
+      brand: 'Zakat Perfumes',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'ALGODÓN DE AZÚCAR',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Golosinas dulces, algodón de azúcar rosa, fruta confitada y vainilla esponjosa.',
+      description: 'Frasco de paleta dulce multicolor. Un estallido alegre de nubes de azúcar, gomitas frutales y algodón de feria con un corazón suave avainillado.',
+      pyramid: {
+        top: 'Golosinas frutales, Nubes de azúcar',
+        heart: 'Algodón de azúcar, Frutas confitadas de feria',
+        base: 'Vainilla dulce, Malvavisco, Almizcle esponjoso'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Alegre y Azucarada',
+        occasion: 'Uso Diario, Tardes, Cumpleaños'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 155, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'yara-elixir': {
+      id: 'yara-elixir',
+      name: 'Yara Elixir',
+      brand: 'Lattafa Perfumes',
+      category: 'arabe',
+      gender: 'mujer',
+      badge: 'INTENSO & GOURMAND',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Eclaire.jpg',
+      notes: 'Caramelo tostado, frutas rojas maduras, flores blancas, vainilla cremosa y ámbar.',
+      description: 'La versión más concentrada y dulce de la mítica línea Yara. Acentúa las notas de caramelo líquido y frutas rojas sobre un manto de flores blancas de Grasse.',
+      pyramid: {
+        top: 'Frutas rojas silvestres, Orquídea, Mandarina',
+        heart: 'Caramelo cremoso, Flores blancas de Grasse, Vainilla',
+        base: 'Haba tonka tostada, Almizcle sedoso, Ámbar cálido'
+      },
+      specs: {
+        duration: '7 - 8h',
+        sillage: 'Femenina y Dulce',
+        occasion: 'Citas, Eventos, Salidas con Amigas'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'lattafa-petra': {
+      id: 'lattafa-petra',
+      name: 'Lattafa Petra',
+      brand: 'Lattafa Perfumes',
+      category: 'arabe',
+      gender: 'mujer',
+      badge: 'NARDOS & RON CREMOSO',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Nardos opulentos, ron añejo licoroso, coco cremoso, vainilla y flores blancas.',
+      description: 'Una fragancia elegante y sofisticada. Mezcla la nobleza floral de los nardos con el encanto licoroso del ron y la suavidad del coco para una experiencia sensual.',
+      pyramid: {
+        top: 'Ron licoroso añejado, Coco dulce, Frutas exóticas',
+        heart: 'Nardos de Grasse, Jazmín blanco, Acorde lactónico',
+        base: 'Vainilla de Madagascar, Almizcle, Ámbar sutil'
+      },
+      specs: {
+        duration: '7 - 8h',
+        sillage: 'Opulenta y Elegante',
+        occasion: 'Eventos Nocturnos, Cenas, Citas'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 165, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'cotton-candy-craze': {
+      id: 'cotton-candy-craze',
+      name: 'Cotton Candy Craze',
+      brand: 'Amaran Gelato',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'GELATO COLLECTION',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Algodón de azúcar rosa, caramelo derretido, frutas confitadas, vainilla y polvo dulce.',
+      description: 'Presentado en forma de cono de helado en tono rosa pastel. Una golosina olfativa de algodón de azúcar esponjoso y caramelo blando que evoca pura dulzura.',
+      pyramid: {
+        top: 'Algodón de azúcar rosa, Fresa dulce',
+        heart: 'Caramelo blando, Vainilla cremosa',
+        base: 'Haba tonka dulce, Almizcle atalcado'
+      },
+      specs: {
+        duration: '7 - 8h',
+        sillage: 'Adictiva y Juvenil',
+        occasion: 'Uso Diario, Tardes, Salidas Casuales'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 170, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'mango-tango': {
+      id: 'mango-tango',
+      name: 'Mango Tango',
+      brand: 'Amaran Gelato',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'GELATO COLLECTION',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Mango maduro jugoso, frutas tropicales, leche de coco, vainilla dulce y flores.',
+      description: 'Helado artesanal de mango dulce en cono dorado. El aroma afrutado más jugoso y veraniego, complementado con notas cremosas de leche de coco y vainilla.',
+      pyramid: {
+        top: 'Mango de Piura maduro, Frutas tropicales, Cítricos suaves',
+        heart: 'Coco cremoso, Flores blancas aromáticas, Caramelo',
+        base: 'Vainilla Bourbon, Maderas suaves, Almizcle dulce'
+      },
+      specs: {
+        duration: '7 - 8h',
+        sillage: 'Fresca y Tropical',
+        occasion: 'Verano, Días Soleados, Vacaciones'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 170, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'viva-la-vanilla': {
+      id: 'viva-la-vanilla',
+      name: 'Viva La Vanilla',
+      brand: 'Amaran Gelato',
+      category: 'gourmand',
+      gender: 'mujer',
+      badge: 'GELATO COLLECTION',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Helado de vainilla pura, azúcar morena tostada, flores dulces, ámbar y polvo sedoso.',
+      description: 'La pureza de la vainilla en helado gourmet. Suave, acogedora y elegante, una caricia de vainilla natural tostada que dura horas en la piel.',
+      pyramid: {
+        top: 'Vainilla cremosa helada, Acorde dulce',
+        heart: 'Flores de azahar, Azúcar caramelizada',
+        base: 'Ámbar cálido, Almizcle limpio, Vainilla en vaina'
+      },
+      specs: {
+        duration: '7 - 8h',
+        sillage: 'Cremosa y Reconfortante',
+        occasion: 'Uso Diario, Citas, Tardes Frescas'
+      },
+      pricing: {
+        '10ml': { pen: 30, label: '10 ML (DECANT)' },
+        '100ml': { pen: 170, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'gucci-bloom-ambrosia': {
+      id: 'gucci-bloom-ambrosia',
+      name: 'Gucci Bloom Ambrosia di Fiori',
+      brand: 'Gucci',
+      category: 'disenador',
+      gender: 'mujer',
+      badge: 'ALTA PERFUMERÍA FLORAL',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Nardos intensos, jazmín sambac, rosa damascena y raíz de lirio aterciopelada.',
+      description: 'El banquete de los dioses griegos. Una versión majestuosa y profunda del clásico Bloom en frasco rojo lacado, cargada de nardos frescos y rosa damascena opulenta.',
+      pyramid: {
+        top: 'Jazmín Sambac dulce, Madreselva silvestre',
+        heart: 'Nardos de la India concentrados, Rosa damascena',
+        base: 'Raíz de lirio toscano (Orris), Almizcle noble'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Opulenta y Distinguida',
+        occasion: 'Bodas, Eventos de Gala, Ocasiones Memorables'
+      },
+      pricing: {
+        '10ml': { pen: 90, label: '10 ML (DECANT)' },
+        '100ml': { pen: 650, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'la-gemme-rosy': {
+      id: 'la-gemme-rosy',
+      name: 'La Gemme Rosy',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'mujer',
+      badge: 'FRESCO & FLORAL',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Cítricos frescos, rosas suaves, toques especiados ligeros, maderas y almizcle.',
+      description: 'Una joya rosada delicada y radiante. Notas cítricas y rocío de rosas frescas sobre un lecho amaderado y almizclado que transmite femineidad sofisticada.',
+      pyramid: {
+        top: 'Cítricos chispeantes, Rocío de mañana',
+        heart: 'Pétalos de rosa rosa, Especias sutiles',
+        base: 'Maderas suaves, Almizcle blanco'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Fresco y Romántico',
+        occasion: 'Primavera, Días Soleados, Oficina'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'pure-gold': {
+      id: 'pure-gold',
+      name: 'Pure Gold',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'unisex',
+      badge: 'OUD NEGRO & ROSA DORADA',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Oud negro majestuoso, rosa dorada aterciopelada, sándalo cremoso, azafrán y ámbar gris.',
+      description: 'Oro puro oriental en frasco degradado. Acorde noble de rosa silvestre y azafrán que reposa sobre un oud negro sutil y sándalo cremoso de gran distinción.',
+      pyramid: {
+        top: 'Rosa dorada silvestre, Azafrán oriental',
+        heart: 'Madera de sándalo noble, Especias árabes',
+        base: 'Oud negro puro, Ámbar gris, Cuero suave'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Opulenta y Señorial',
+        occasion: 'Noche, Gala, Eventos Exclusivos'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 165, label: '100 ML (FRASCO)' }
+      }
+    },
+
+    'royale-rubina': {
+      id: 'royale-rubina',
+      name: 'Royale Rubina',
+      brand: 'Zakat Perfumes',
+      category: 'arabe',
+      gender: 'mujer',
+      badge: 'GROSELLA & AZAHAR',
+      stockStatus: 'Decant 10 ML Disponible',
+      img: 'assets/images/Decants.png',
+      notes: 'Grosella negra, azahar, jazmín blanco, rosa suave, vainilla, ámbar y maderas.',
+      description: 'Frasco rubí coronado por alas doradas. Una combinación vibrante de grosella negra y flores blancas que reposa en un fondo cremoso de vainilla y ámbar cálido.',
+      pyramid: {
+        top: 'Grosella negra jugosa, Cítricos frescos',
+        heart: 'Flor de azahar, Jazmín blanco, Rosa delicada',
+        base: 'Vainilla dulce, Ámbar cálido, Almizcle, Maderas'
+      },
+      specs: {
+        duration: '8 - 9h',
+        sillage: 'Brillante y Cautivadora',
+        occasion: 'Citas, Fiestas, Salidas Especiales'
+      },
+      pricing: {
+        '10ml': { pen: 28, label: '10 ML (DECANT)' },
+        '100ml': { pen: 160, label: '100 ML (FRASCO)' }
+      }
     }
   };
 
